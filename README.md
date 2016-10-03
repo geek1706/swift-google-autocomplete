@@ -15,7 +15,7 @@ pod 'swift-google-autocomplete'
 ```
 ### Carthage
 ```
-geek1706/swift-google-autocomplete
+github "geek1706/swift-google-autocomplete"
 ```
 ##Usage
 ```swift
