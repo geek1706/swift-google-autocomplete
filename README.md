@@ -7,6 +7,10 @@ Fetch google's autocomplete suggestions
 [![Platform](https://img.shields.io/cocoapods/p/swift-google-autocomplete.svg?style=flat)](http://cocoapods.org/pods/swift-google-autocomplete)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+## Requirements
+- Xcode 8+
+- Swift 3.0+
+
 ## Installation
 ### Cocoapods
 ```ruby
