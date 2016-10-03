@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AutoCompleteError: Error {
+public enum AutoCompleteError: Error {
     case invalidURL(String)
     case invalidData(String)
     case failedToRetrieveData(String)
@@ -16,7 +16,7 @@ enum AutoCompleteError: Error {
     case serializationError(String)
 }
 
-class AutoComplete {
+public class AutoComplete {
     
     static let baseURL = "http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&alt=json&q="
 
@@ -26,7 +26,7 @@ class AutoComplete {
     /// - Parameters:
     ///   - term: a seed term
     ///   - completionHandler: A completion handler after finishing task
-    static func getQuerySuggestions(_ term: String, completionHandler: @escaping ([String]?, Error?) -> Void) -> Void {
+    open static func getQuerySuggestions(_ term: String, completionHandler: @escaping ([String]?, Error?) -> Void) -> Void {
         DispatchQueue.global().async {
             let URLString = baseURL + term
             
