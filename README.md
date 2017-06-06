@@ -21,7 +21,7 @@ pod 'swift-google-autocomplete'
 ```
 github "geek1706/swift-google-autocomplete"
 ```
-##Usage
+## Usage
 ```swift
 // Fetch google's autocomplete suggestions for a given seed term
 AutoComplete.getQuerySuggestions("side to side") { results, error in
