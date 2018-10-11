@@ -40,7 +40,7 @@ public class AutoComplete {
                 return
             }
             
-            guard let response = String(data: data, encoding: String.Encoding.utf8) else {
+            guard let response = String(data: data, encoding: String.Encoding.ascii) else {
                 completionHandler(nil, AutoCompleteError.failToDecodeData(URLString))
                 return
             }
@@ -49,7 +49,7 @@ public class AutoComplete {
             let scanner = Scanner(string: response)
             
             scanner.scanUpTo("[[", into: nil) // Scan to where the JSON begins
-            scanner.scanUpTo("]]", into:  &JSON)
+            scanner.scanUpTo(",{", into:  &JSON)
             
             guard JSON != nil else {
                 completionHandler(nil, AutoCompleteError.failedToRetrieveData(URLString))
@@ -57,7 +57,7 @@ public class AutoComplete {
             }
             
             //The idea is to identify where the "real" JSON begins and ends.
-            JSON = NSString(format: "%@%@", JSON!,"]]")
+            JSON = NSString(format: "%@", JSON!)
             
             do {
                 let array = try JSONSerialization.jsonObject(with: JSON!.data(using: String.Encoding.utf8.rawValue) ?? Data(), options: .allowFragments)
