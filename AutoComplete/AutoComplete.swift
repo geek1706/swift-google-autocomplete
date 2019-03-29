@@ -26,7 +26,7 @@ public class AutoComplete {
     /// - Parameters:
     ///   - term: a seed term
     ///   - completionHandler: A completion handler after finishing task
-    open static func getQuerySuggestions(_ term: String, completionHandler: @escaping ([String]?, Error?) -> Void) -> Void {
+    public static func getQuerySuggestions(_ term: String, completionHandler: @escaping ([String]?, Error?) -> Void) -> Void {
         DispatchQueue.global().async {
             let URLString = baseURL + term
             
